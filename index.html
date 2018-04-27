@@ -1,0 +1,114 @@
+<html>
+	<head>
+	  <meta charset="UTF-8">
+	  <script language="javascript" type="text/javascript" src="p5.js"></script>
+	  <script language="javascript" type="text/javascript" src="p5.serialport.js"></script>
+	  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+	  <style> 
+      
+      body {
+        padding: 0; margin: 0;
+        width:100%;
+        font-family: sans-serif;
+        color: #333333;
+      }
+      
+      #control{
+        width:70%;
+        float:left;
+      }
+    
+      .phoneUI {
+        width:50%;
+        z-index:1500;
+        position:absolute;
+        left: 50%;
+        display:none;
+      }
+      
+      #inactive{
+        display:block;
+      }
+      
+      .button{
+        width: 200px;
+        height: 100px;
+      }
+      
+      #top-control{
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-bottom: 10%;
+      }
+      
+      #down-control{
+        margin-left: 5%;
+      }
+      
+      #stop-button{
+      }
+      
+      #walk-button{
+      }
+      
+      #active-button{
+      }
+      
+      #idle-button{
+      }
+      
+      .button{
+        background-color:white;
+        border-radius:2%;
+        border:2px solid #666666;
+        font-size: 18pt;
+        color:#333333;
+        margin-right:20px;
+        margin-top:30px;
+        font-weight:600;        
+      }
+      
+      .button: hover{
+        background-color:#333333;
+        color:#f2f2f2;
+      }
+    
+    </style>
+	</head>
+	<body>
+    <div id="control">
+<!--    <button type="button" onclick="" id="switchBoard">SWITCH</button>-->
+    <div id="top-control">
+    <h1>Light Control:</h1>
+      <br>
+    <button type="button" class="button" onclick="stopButton()" id="stop-button">STOP</button>
+    <button type="button" class="button" onclick="walkButton()" id="walk-button">WALK</button>
+    </div>
+    
+    <div id="down-control">  
+    <h1>Phone Status:</h1>
+    <button type="button" onclick="activePhone()" class="button" id="active-button">ACTIVE</button>
+    <audio id="play" src="Emergency%20Alert%20Sound.mp3"></audio>
+    <button type="button" onclick="idlePhone()" class="button" id="idle-button">IDLE</button>
+      </div>      
+    </div>
+    
+    <div class="phoneUI" id="active">
+      <img src="active.jpg" width="100%">
+    </div>
+    <div class="phoneUI" id="inactive">
+      <img src="inactive.jpg" width="100%">
+    </div><div class="phoneUI" id="warning">
+      <img src="warning.jpg" width="100%">
+    </div>
+<!--
+    <label>Red value</label>
+    <input id="red" type="number" min="0" max="50">
+    <label>Green value</label>
+    <input id="green" type="number" min="0" max="50">
+    <label>Blue value</label>
+    <input id="blue" type="number" min="0" max="50">
+    <button type="button" onclick="setLed()" id="setLed">Set Color</button>
+-->
+	</body>
+</html>
